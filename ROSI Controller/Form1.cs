@@ -30,5 +30,15 @@ namespace ROSI_Controller
             else
                 MessageBox.Show("Please complete the form in order to continue!");
         }
+
+        private void singleCourseButton_Click(object sender, EventArgs e)
+        {
+            if (singleCourseCodeTextbox.Text.Length > 0 && singleSectionCodeTextbox.Text.Length > 0)
+            {
+                Course c = new Course();
+                c.courseCode = singleCourseCodeTextbox.Text;
+                c.sectionCode = singleSectionCodeTextbox.Text;
+            }
+        }
     }
 }
