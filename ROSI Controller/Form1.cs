@@ -13,16 +13,22 @@ namespace ROSI_Controller
     public partial class Form1 : Form
     {
         protected string studentNumber;
-        protected string pinNumber;
+        protected string pin;
         public Form1()
         {
             InitializeComponent();
         }
-        
+
         private void button1_Click(object sender, EventArgs e)
         {
-            studentNumber = studentNum.Text;
-            pinNumber = pin.Text;
+            if (sNumText.Text.Length > 1 && pinText.Text.Length > 1)
+            {
+                studentNumber = sNumText.Text;
+                pin = pinText.Text;
+                general.SelectTab("operation");
+            }
+            else
+                MessageBox.Show("Please complete the form in order to continue!");
         }
     }
 }
