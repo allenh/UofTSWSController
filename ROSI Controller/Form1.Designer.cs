@@ -171,9 +171,9 @@
             this.checkBox1.AutoSize = true;
             this.checkBox1.Location = new System.Drawing.Point(201, 173);
             this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(164, 17);
+            this.checkBox1.Size = new System.Drawing.Size(171, 17);
             this.checkBox1.TabIndex = 7;
-            this.checkBox1.Text = "Continuous check for spaces";
+            this.checkBox1.Text = "Continuous attempting to enroll";
             this.checkBox1.UseVisualStyleBackColor = true;
             this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 

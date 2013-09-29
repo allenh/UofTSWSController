@@ -53,7 +53,7 @@ namespace ROSI_Controller
         /// </summary>
         /// <param name="c">Course course</param>
         /// <returns></returns>
-        public bool addSingleCourse(Course course, FirefoxDriver driver)
+        public bool addSingleCourse(Course course, FirefoxDriver driver, bool continuous)
         {
             try
             {                
@@ -85,23 +85,47 @@ namespace ROSI_Controller
                 string lectureSection = course.getLectureSection();
                 lectureSection = lectureSection.Insert(3, ",");
 
-                if (page.Contains("Add Meeting Section") && page.Contains(lectureSection))
+                if (continuous)
                 {
-                    string sectionXPath = "//*[contains(@value,'" + lectureSection + "')]";
-                    webElement = driver.FindElement(By.XPath(sectionXPath));
-                    webElement.Click();
+                    if (page.Contains("Add Meeting Section"))
+                    {
+                        string sectionXPath = "//*[contains(@value,'" + lectureSection + "')]";
+                        webElement = driver.FindElement(By.XPath(sectionXPath));
+                        webElement.Click();
 
-                    webElement = driver.FindElement(By.XPath("//*[contains(@value,'Add Meeting Sections')]"));
-                    webElement.Click();
-                    if (driver.PageSource.Contains("success"))
-                        return true;
+                        webElement = driver.FindElement(By.XPath("//*[contains(@value,'Add Meeting Sections')]"));
+                        webElement.Click();
+                        if (driver.PageSource.Contains("success"))
+                            return true;
+                        else
+                            return false;
+                    }
                     else
+                    {
                         return false;
+                    }
                 }
                 else
                 {
-                    return false;
+                    if (page.Contains("Add Meeting Section") && page.Contains(lectureSection))
+                    {
+                        string sectionXPath = "//*[contains(@value,'" + lectureSection + "')]";
+                        webElement = driver.FindElement(By.XPath(sectionXPath));
+                        webElement.Click();
+
+                        webElement = driver.FindElement(By.XPath("//*[contains(@value,'Add Meeting Sections')]"));
+                        webElement.Click();
+                        if (driver.PageSource.Contains("success"))
+                            return true;
+                        else
+                            return false;
+                    }
+                    else
+                    {
+                        return false;
+                    }
                 }
+
             }
             catch (Exception e)
             {

@@ -88,7 +88,7 @@ namespace ROSI_Controller
                     string lectureSection = singleLectureSectionBox.Text;
                     Course c = new Course(courseCode, sectionCode, lectureSection);
                     while (!success)
-                        success = op.addSingleCourse(c, driver);
+                        success = op.addSingleCourse(c, driver, true);
 
                     if (success)
                         MessageBox.Show((c.getFullCourseCode() + " has been successfully added!"));
@@ -99,7 +99,7 @@ namespace ROSI_Controller
                     string sectionCode = singleSectionCodeTextbox.Text.ToUpper();
                     string lectureSection = singleLectureSectionBox.Text;
                     Course c = new Course(courseCode, sectionCode, lectureSection);
-                    success = op.addSingleCourse(c, driver);
+                    success = op.addSingleCourse(c, driver, false);
                     if (success)
                         MessageBox.Show((c.getFullCourseCode() + " has been successfully added!"));
                     else
@@ -192,7 +192,7 @@ namespace ROSI_Controller
                 string sectionCode = sc[i].Item2.Text.ToUpper();
                 string lectureSection = ls[i].Item2.Text.ToUpper(); ;
                 Course course = new Course(courseCode, sectionCode, lectureSection);
-                bool success = op.addSingleCourse(course, driver);
+                bool success = op.addSingleCourse(course, driver, false);
                 if (!success)
                     noneSuccess.Add(course.getFullCourseCode());
             }
