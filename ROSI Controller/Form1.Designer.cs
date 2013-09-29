@@ -316,7 +316,7 @@
             this.ClientSize = new System.Drawing.Size(585, 369);
             this.Controls.Add(this.general);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Automatic ROSI";
             this.general.ResumeLayout(false);
             this.auth.ResumeLayout(false);
             this.auth.PerformLayout();
