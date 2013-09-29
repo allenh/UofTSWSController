@@ -30,7 +30,7 @@
         {
             this.general = new System.Windows.Forms.TabControl();
             this.auth = new System.Windows.Forms.TabPage();
-            this.button1 = new System.Windows.Forms.Button();
+            this.loginButton = new System.Windows.Forms.Button();
             this.pinText = new System.Windows.Forms.TextBox();
             this.sNumText = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -69,7 +69,7 @@
             // 
             // auth
             // 
-            this.auth.Controls.Add(this.button1);
+            this.auth.Controls.Add(this.loginButton);
             this.auth.Controls.Add(this.pinText);
             this.auth.Controls.Add(this.sNumText);
             this.auth.Controls.Add(this.label2);
@@ -82,15 +82,15 @@
             this.auth.Text = "tabPage1";
             this.auth.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // loginButton
             // 
-            this.button1.Location = new System.Drawing.Point(208, 166);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 25;
-            this.button1.Text = "Confirm";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.loginButton.Location = new System.Drawing.Point(208, 166);
+            this.loginButton.Name = "loginButton";
+            this.loginButton.Size = new System.Drawing.Size(75, 23);
+            this.loginButton.TabIndex = 25;
+            this.loginButton.Text = "Confirm";
+            this.loginButton.UseVisualStyleBackColor = true;
+            this.loginButton.Click += new System.EventHandler(this.loginButton_Click);
             // 
             // pinText
             // 
@@ -287,7 +287,7 @@
 
         private System.Windows.Forms.TabControl general;
         private System.Windows.Forms.TabPage auth;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button loginButton;
         private System.Windows.Forms.TextBox pinText;
         private System.Windows.Forms.TextBox sNumText;
         private System.Windows.Forms.Label label2;

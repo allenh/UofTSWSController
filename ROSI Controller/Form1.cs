@@ -54,7 +54,7 @@ namespace ROSI_Controller
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void loginButton_Click(object sender, EventArgs e)
         {
             if (sNumText.Text.Length > 1 && pinText.Text.Length > 1)
             {
@@ -92,10 +92,12 @@ namespace ROSI_Controller
             }
         }
 
-        private void errorHandler(string page)
-        {
-        }
 
+        /// <summary>
+        /// Dynamically add course information
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void add_Click(object sender, EventArgs e)
         {
             Label l1 = new Label();
@@ -166,10 +168,31 @@ namespace ROSI_Controller
 
         private void multiConfirm_Click(object sender, EventArgs e)
         {
+            List<string> noneSuccess = new List<string>();
             for (int i = 0; i < courseCount; ++i)
             {
-
+                string courseCode = cc[i].Item2.Text.ToUpper();
+                string sectionCode = sc[i].Item2.Text.ToUpper();
+                string lectureSection = ls[i].Item2.Text.ToUpper(); ;
+                Course course = new Course(courseCode, sectionCode, lectureSection);
+                bool success = op.addSingleCourse(course, driver);
+                if (!success)
+                    noneSuccess.Add(course.getFullCourseCode());
             }
+
+            if (noneSuccess.Count > 0)
+            {
+                string errormsg = "Due to some errors the following course(s) are not added: \r\n";
+                for (int i = 0; i < noneSuccess.Count; ++i)
+                {
+                    errormsg += (noneSuccess[i] + "\r\n");
+                }
+                MessageBox.Show(errormsg);
+            }
+        }
+
+        private void errorHandler(string page)
+        {
         }
     }
 }
