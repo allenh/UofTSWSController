@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using OpenQA.Selenium.Firefox;
 
 namespace ROSI_Controller
 {
@@ -14,9 +15,14 @@ namespace ROSI_Controller
     {
         protected string studentNumber;
         protected string pin;
+
+        SeleniumOperator op;
+        FirefoxDriver driver;
+
         public Form1()
         {
             InitializeComponent();
+            driver = new FirefoxDriver();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -25,8 +31,17 @@ namespace ROSI_Controller
             {
                 studentNumber = sNumText.Text;
                 pin = pinText.Text;
-                
-                general.SelectTab("operation");
+                op = new SeleniumOperator(studentNumber, pin);
+                bool loginSuccess = op.login(driver);
+                if (loginSuccess)
+                    general.SelectTab("operation");
+                else
+                {
+                    if (driver.PageSource.Contains("Server not found"))
+                        MessageBox.Show("Please check your internet connection");
+                    else
+                        MessageBox.Show("Please enter the correct login information");
+                }
             }
             else
                 MessageBox.Show("Please complete the form in order to continue!");
@@ -36,18 +51,20 @@ namespace ROSI_Controller
         {
             if (singleCourseCodeTextbox.Text.Length > 0 && singleSectionCodeTextbox.Text.Length > 0)
             {
-                
                 string courseCode = singleCourseCodeTextbox.Text.ToUpper();
                 string sectionCode = singleSectionCodeTextbox.Text.ToUpper();
                 string lectureSection = singleLectureSectionBox.Text;
                 Course c = new Course(courseCode, sectionCode, lectureSection);
-                SeleniumOperator sop = new SeleniumOperator(studentNumber, pin);
-                bool success = sop.addSingleCourse(c);
+                bool success = op.addSingleCourse(c, driver);
                 if (success)
-                    MessageBox.Show("{0} has been successfully added", c.getFullCourseCode());
+                    MessageBox.Show((c.getFullCourseCode() + " has been successfully added!"));
                 else
                     MessageBox.Show("An error occrued while adding the course");
             }
+        }
+
+        private void errorHandler(string page)
+        {
         }
     }
 }

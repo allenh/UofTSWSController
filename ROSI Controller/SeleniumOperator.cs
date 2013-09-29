@@ -22,20 +22,10 @@ namespace ROSI_Controller
             this.pin = pin;
         }
 
-        /// <summary>
-        /// Return true iff the course specified is added successfully;
-        /// return false otherwise.
-        /// </summary>
-        /// <param name="c">Course course</param>
-        /// <returns></returns>
-        public bool addSingleCourse(Course course)
+        public bool login(FirefoxDriver driver)
         {
             try
             {
-                FirefoxDriver driver = new FirefoxDriver();
-                driver.Navigate().GoToUrl(sws);
-
-
                 driver.Navigate().GoToUrl(sws);
                 var webElement = driver.FindElement(By.Name("personId"));
                 webElement.SendKeys(studentNumber);
@@ -44,8 +34,40 @@ namespace ROSI_Controller
                 webElement = driver.FindElement(By.CssSelector("input.button"));
                 webElement.Click();
 
+                string page = driver.PageSource;
+                if (page.Contains("SWS Home"))
+                    return true;
+                else
+                    return false;
+
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+        /// <summary>
+        /// Return true iff the course specified is added successfully;
+        /// return false otherwise.
+        /// </summary>
+        /// <param name="c">Course course</param>
+        /// <returns></returns>
+        public bool addSingleCourse(Course course, FirefoxDriver driver)
+        {
+            try
+            {                
+                /*
+                driver.Navigate().GoToUrl(sws);
+                var webElement = driver.FindElement(By.Name("personId"));
+                webElement.SendKeys(studentNumber);
+                webElement = driver.FindElement(By.Name("pin"));
+                webElement.SendKeys(pin);
+                webElement = driver.FindElement(By.CssSelector("input.button"));
+                webElement.Click();*/
+
                 driver.Navigate().GoToUrl(enrolmentPage);
-                webElement = driver.FindElement(By.XPath("(//a[contains(text(),'Manage Courses')])[2]"));
+                var webElement = driver.FindElement(By.XPath("(//a[contains(text(),'Manage Courses')])[2]"));
 
                 Thread.Sleep(TimeSpan.FromSeconds(3));
                 webElement.Click();
@@ -71,7 +93,10 @@ namespace ROSI_Controller
 
                     webElement = driver.FindElement(By.XPath("//*[contains(@value,'Add Meeting Sections')]"));
                     webElement.Click();
-                    return true;
+                    if (driver.PageSource.Contains("success"))
+                        return true;
+                    else
+                        return false;
                 }
                 else
                 {
@@ -83,5 +108,6 @@ namespace ROSI_Controller
                 return false;
             }
         }
+
     }
 }
