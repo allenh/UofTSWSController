@@ -50,6 +50,9 @@
             this.multiConfirm = new System.Windows.Forms.Button();
             this.add = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
             this.general.SuspendLayout();
             this.auth.SuspendLayout();
             this.operation.SuspendLayout();
@@ -151,6 +154,9 @@
             // autoEnrolmentTab
             // 
             this.autoEnrolmentTab.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.autoEnrolmentTab.Controls.Add(this.label8);
+            this.autoEnrolmentTab.Controls.Add(this.label7);
+            this.autoEnrolmentTab.Controls.Add(this.label6);
             this.autoEnrolmentTab.Controls.Add(this.checkBox1);
             this.autoEnrolmentTab.Controls.Add(this.singleLectureSectionBox);
             this.autoEnrolmentTab.Controls.Add(this.label5);
@@ -169,7 +175,7 @@
             // checkBox1
             // 
             this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(201, 173);
+            this.checkBox1.Location = new System.Drawing.Point(196, 177);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(171, 17);
             this.checkBox1.TabIndex = 7;
@@ -179,7 +185,7 @@
             // 
             // singleLectureSectionBox
             // 
-            this.singleLectureSectionBox.Location = new System.Drawing.Point(276, 136);
+            this.singleLectureSectionBox.Location = new System.Drawing.Point(233, 140);
             this.singleLectureSectionBox.Name = "singleLectureSectionBox";
             this.singleLectureSectionBox.Size = new System.Drawing.Size(100, 20);
             this.singleLectureSectionBox.TabIndex = 6;
@@ -187,7 +193,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(184, 139);
+            this.label5.Location = new System.Drawing.Point(141, 143);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(85, 13);
             this.label5.TabIndex = 5;
@@ -195,7 +201,7 @@
             // 
             // singleCourseButton
             // 
-            this.singleCourseButton.Location = new System.Drawing.Point(228, 205);
+            this.singleCourseButton.Location = new System.Drawing.Point(223, 209);
             this.singleCourseButton.Name = "singleCourseButton";
             this.singleCourseButton.Size = new System.Drawing.Size(113, 23);
             this.singleCourseButton.TabIndex = 4;
@@ -205,14 +211,14 @@
             // 
             // singleSectionCodeTextbox
             // 
-            this.singleSectionCodeTextbox.Location = new System.Drawing.Point(276, 103);
+            this.singleSectionCodeTextbox.Location = new System.Drawing.Point(233, 107);
             this.singleSectionCodeTextbox.Name = "singleSectionCodeTextbox";
             this.singleSectionCodeTextbox.Size = new System.Drawing.Size(100, 20);
             this.singleSectionCodeTextbox.TabIndex = 3;
             // 
             // singleCourseCodeTextbox
             // 
-            this.singleCourseCodeTextbox.Location = new System.Drawing.Point(276, 69);
+            this.singleCourseCodeTextbox.Location = new System.Drawing.Point(233, 73);
             this.singleCourseCodeTextbox.Name = "singleCourseCodeTextbox";
             this.singleCourseCodeTextbox.Size = new System.Drawing.Size(100, 20);
             this.singleCourseCodeTextbox.TabIndex = 2;
@@ -220,7 +226,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(195, 107);
+            this.label4.Location = new System.Drawing.Point(152, 111);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(74, 13);
             this.label4.TabIndex = 1;
@@ -229,7 +235,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(198, 74);
+            this.label3.Location = new System.Drawing.Point(155, 78);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(71, 13);
             this.label3.TabIndex = 0;
@@ -276,6 +282,33 @@
             this.panel1.Size = new System.Drawing.Size(486, 333);
             this.panel1.TabIndex = 1;
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(340, 147);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(69, 13);
+            this.label6.TabIndex = 8;
+            this.label6.Text = "eg. LEC0101";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(340, 114);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(31, 13);
+            this.label7.TabIndex = 9;
+            this.label7.Text = "eg. F";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(343, 79);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(78, 13);
+            this.label8.TabIndex = 10;
+            this.label8.Text = "eg. CSC108H1";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -320,6 +353,9 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button multiConfirm;
         private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label8;
 
 
 
