@@ -25,6 +25,7 @@ namespace ROSI_Controller
             {
                 studentNumber = sNumText.Text;
                 pin = pinText.Text;
+                
                 general.SelectTab("operation");
             }
             else
@@ -35,9 +36,17 @@ namespace ROSI_Controller
         {
             if (singleCourseCodeTextbox.Text.Length > 0 && singleSectionCodeTextbox.Text.Length > 0)
             {
-                Course c = new Course();
-                c.courseCode = singleCourseCodeTextbox.Text;
-                c.sectionCode = singleSectionCodeTextbox.Text;
+                
+                string courseCode = singleCourseCodeTextbox.Text.ToUpper();
+                string sectionCode = singleSectionCodeTextbox.Text.ToUpper();
+                string lectureSection = singleLectureSectionBox.Text;
+                Course c = new Course(courseCode, sectionCode, lectureSection);
+                SeleniumOperator sop = new SeleniumOperator(studentNumber, pin);
+                bool success = sop.addSingleCourse(c);
+                if (success)
+                    MessageBox.Show("{0} has been successfully added", c.getFullCourseCode());
+                else
+                    MessageBox.Show("An error occrued while adding the course");
             }
         }
     }

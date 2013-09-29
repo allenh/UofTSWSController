@@ -38,12 +38,14 @@
             this.operation = new System.Windows.Forms.TabPage();
             this.ops = new System.Windows.Forms.TabControl();
             this.autoEnrolmentTab = new System.Windows.Forms.TabPage();
+            this.label5 = new System.Windows.Forms.Label();
             this.singleCourseButton = new System.Windows.Forms.Button();
             this.singleSectionCodeTextbox = new System.Windows.Forms.TextBox();
             this.singleCourseCodeTextbox = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.singleLectureSectionBox = new System.Windows.Forms.TextBox();
             this.general.SuspendLayout();
             this.auth.SuspendLayout();
             this.operation.SuspendLayout();
@@ -90,6 +92,7 @@
             // 
             this.pinText.Location = new System.Drawing.Point(239, 127);
             this.pinText.Name = "pinText";
+            this.pinText.PasswordChar = '*';
             this.pinText.Size = new System.Drawing.Size(100, 20);
             this.pinText.TabIndex = 24;
             // 
@@ -143,6 +146,8 @@
             // autoEnrolmentTab
             // 
             this.autoEnrolmentTab.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.autoEnrolmentTab.Controls.Add(this.singleLectureSectionBox);
+            this.autoEnrolmentTab.Controls.Add(this.label5);
             this.autoEnrolmentTab.Controls.Add(this.singleCourseButton);
             this.autoEnrolmentTab.Controls.Add(this.singleSectionCodeTextbox);
             this.autoEnrolmentTab.Controls.Add(this.singleCourseCodeTextbox);
@@ -155,9 +160,18 @@
             this.autoEnrolmentTab.TabIndex = 0;
             this.autoEnrolmentTab.Text = "Automatic Single Course Enrolment";
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(127, 129);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(85, 13);
+            this.label5.TabIndex = 5;
+            this.label5.Text = "Lecture Section:";
+            // 
             // singleCourseButton
             // 
-            this.singleCourseButton.Location = new System.Drawing.Point(144, 137);
+            this.singleCourseButton.Location = new System.Drawing.Point(144, 160);
             this.singleCourseButton.Name = "singleCourseButton";
             this.singleCourseButton.Size = new System.Drawing.Size(175, 23);
             this.singleCourseButton.TabIndex = 4;
@@ -207,6 +221,13 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "tabPage2";
             // 
+            // singleLectureSectionBox
+            // 
+            this.singleLectureSectionBox.Location = new System.Drawing.Point(219, 129);
+            this.singleLectureSectionBox.Name = "singleLectureSectionBox";
+            this.singleLectureSectionBox.Size = new System.Drawing.Size(100, 20);
+            this.singleLectureSectionBox.TabIndex = 6;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -244,6 +265,8 @@
         private System.Windows.Forms.TextBox singleSectionCodeTextbox;
         private System.Windows.Forms.TextBox singleCourseCodeTextbox;
         private System.Windows.Forms.Button singleCourseButton;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox singleLectureSectionBox;
 
 
 

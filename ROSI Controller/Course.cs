@@ -8,16 +8,34 @@ namespace ROSI_Controller
 {
     class Course
     {
-        public string courseCode 
+        private string courseCode;
+        private string sectionCode;
+        private string lectureSection;
+        public Course(string courseCode, string sectionCode, string lectureSection)
         {
-            get { return courseCode; }
-            set { this.courseCode = value; }
-
+            this.courseCode = courseCode;
+            this.sectionCode = sectionCode;
+            this.lectureSection = lectureSection;
         }
-        public string sectionCode
+
+        public string getCourseCode()
         {
-            get { return sectionCode; }
-            set { this.sectionCode = value; }
+            return this.courseCode;
+        }
+        
+        public string getSectionCode()
+        {
+            return this.sectionCode;
+        }
+        
+        public string getLectureSection()
+        {
+            return this.lectureSection;
+        }
+
+        public string getFullCourseCode()
+        {
+            return (this.courseCode + this.sectionCode);
         }
 
     }
