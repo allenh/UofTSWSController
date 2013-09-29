@@ -31,7 +31,6 @@ namespace ROSI_Controller
         int courseCount = 0;
         int newRowSpacing = 100;
         int rowCount = 0;
-        
 
 
         public Form1()
@@ -191,14 +190,17 @@ namespace ROSI_Controller
             List<string> noneSuccess = new List<string>();
             for (int i = 0; i < courseCount; ++i)
             {
-                string courseCode = cc[i].Item2.Text.ToUpper();
-                string sectionCode = sc[i].Item2.Text.ToUpper();
-                string lectureSection = ls[i].Item2.Text.ToUpper(); ;
-                Course course = new Course(courseCode, sectionCode, lectureSection);
-                bool success = op.addSingleCourse(course, driver, false);
-                if (!success)
-                    noneSuccess.Add(course.getFullCourseCode());
-                Thread.Sleep(TimeSpan.FromSeconds(1));
+                if (cc[i].Item2.TextLength > 0 && sc[i].Item2.TextLength > 0 && ls[i].Item2.TextLength > 0)
+                {
+                    string courseCode = cc[i].Item2.Text.ToUpper();
+                    string sectionCode = sc[i].Item2.Text.ToUpper();
+                    string lectureSection = ls[i].Item2.Text.ToUpper(); ;
+                    Course course = new Course(courseCode, sectionCode, lectureSection);
+                    bool success = op.addSingleCourse(course, driver, false);
+                    if (!success)
+                        noneSuccess.Add(course.getFullCourseCode());
+                    Thread.Sleep(TimeSpan.FromSeconds(1));
+                }
             }
 
             if (noneSuccess.Count > 0)
