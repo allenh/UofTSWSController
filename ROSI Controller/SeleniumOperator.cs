@@ -73,6 +73,7 @@ namespace ROSI_Controller
                 webElement.Click();
 
                 // supply course information for lookup
+                Thread.Sleep(TimeSpan.FromMilliseconds(1500));
                 webElement = driver.FindElement(By.Name("code"));
                 webElement.SendKeys(course.getCourseCode());
                 webElement = driver.FindElement(By.Name("sectionCode"));

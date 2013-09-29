@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using OpenQA.Selenium.Firefox;
+using System.Threading;
 
 namespace ROSI_Controller
 {
@@ -51,7 +52,6 @@ namespace ROSI_Controller
             columnTwoText.Add(Tuple.Create(316, 69));
 
             driver = new FirefoxDriver();
-
         }
 
         private void loginButton_Click(object sender, EventArgs e)
@@ -88,7 +88,10 @@ namespace ROSI_Controller
                     string lectureSection = singleLectureSectionBox.Text;
                     Course c = new Course(courseCode, sectionCode, lectureSection);
                     while (!success)
+                    {
                         success = op.addSingleCourse(c, driver, true);
+                        Thread.Sleep(TimeSpan.FromSeconds(30));  // 30 second pause
+                    }
 
                     if (success)
                         MessageBox.Show((c.getFullCourseCode() + " has been successfully added!"));
@@ -195,6 +198,7 @@ namespace ROSI_Controller
                 bool success = op.addSingleCourse(course, driver, false);
                 if (!success)
                     noneSuccess.Add(course.getFullCourseCode());
+                Thread.Sleep(TimeSpan.FromSeconds(1));
             }
 
             if (noneSuccess.Count > 0)

@@ -62,10 +62,10 @@
             // 
             this.general.Controls.Add(this.auth);
             this.general.Controls.Add(this.operation);
-            this.general.Location = new System.Drawing.Point(3, -3);
+            this.general.Location = new System.Drawing.Point(-14, -23);
             this.general.Name = "general";
             this.general.SelectedIndex = 0;
-            this.general.Size = new System.Drawing.Size(586, 375);
+            this.general.Size = new System.Drawing.Size(617, 409);
             this.general.TabIndex = 21;
             // 
             // auth
@@ -78,14 +78,14 @@
             this.auth.Location = new System.Drawing.Point(4, 22);
             this.auth.Name = "auth";
             this.auth.Padding = new System.Windows.Forms.Padding(3);
-            this.auth.Size = new System.Drawing.Size(578, 349);
+            this.auth.Size = new System.Drawing.Size(609, 383);
             this.auth.TabIndex = 0;
             this.auth.Text = "tabPage1";
             this.auth.UseVisualStyleBackColor = true;
             // 
             // loginButton
             // 
-            this.loginButton.Location = new System.Drawing.Point(208, 166);
+            this.loginButton.Location = new System.Drawing.Point(257, 197);
             this.loginButton.Name = "loginButton";
             this.loginButton.Size = new System.Drawing.Size(75, 23);
             this.loginButton.TabIndex = 25;
@@ -95,7 +95,7 @@
             // 
             // pinText
             // 
-            this.pinText.Location = new System.Drawing.Point(239, 127);
+            this.pinText.Location = new System.Drawing.Point(288, 158);
             this.pinText.Name = "pinText";
             this.pinText.PasswordChar = '*';
             this.pinText.Size = new System.Drawing.Size(100, 20);
@@ -103,7 +103,7 @@
             // 
             // sNumText
             // 
-            this.sNumText.Location = new System.Drawing.Point(239, 90);
+            this.sNumText.Location = new System.Drawing.Point(288, 121);
             this.sNumText.Name = "sNumText";
             this.sNumText.Size = new System.Drawing.Size(100, 20);
             this.sNumText.TabIndex = 23;
@@ -111,7 +111,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(200, 130);
+            this.label2.Location = new System.Drawing.Point(249, 161);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(22, 13);
             this.label2.TabIndex = 22;
@@ -120,7 +120,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(138, 90);
+            this.label1.Location = new System.Drawing.Point(187, 121);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(84, 13);
             this.label1.TabIndex = 21;
@@ -132,7 +132,7 @@
             this.operation.Location = new System.Drawing.Point(4, 22);
             this.operation.Name = "operation";
             this.operation.Padding = new System.Windows.Forms.Padding(3);
-            this.operation.Size = new System.Drawing.Size(578, 349);
+            this.operation.Size = new System.Drawing.Size(609, 383);
             this.operation.TabIndex = 1;
             this.operation.Text = "tabPage2";
             this.operation.UseVisualStyleBackColor = true;
@@ -141,10 +141,10 @@
             // 
             this.ops.Controls.Add(this.autoEnrolmentTab);
             this.ops.Controls.Add(this.tabPage2);
-            this.ops.Location = new System.Drawing.Point(0, 6);
+            this.ops.Location = new System.Drawing.Point(6, 3);
             this.ops.Name = "ops";
             this.ops.SelectedIndex = 0;
-            this.ops.Size = new System.Drawing.Size(575, 340);
+            this.ops.Size = new System.Drawing.Size(587, 367);
             this.ops.SizeMode = System.Windows.Forms.TabSizeMode.FillToRight;
             this.ops.TabIndex = 0;
             // 
@@ -162,7 +162,7 @@
             this.autoEnrolmentTab.Location = new System.Drawing.Point(4, 22);
             this.autoEnrolmentTab.Name = "autoEnrolmentTab";
             this.autoEnrolmentTab.Padding = new System.Windows.Forms.Padding(3);
-            this.autoEnrolmentTab.Size = new System.Drawing.Size(567, 314);
+            this.autoEnrolmentTab.Size = new System.Drawing.Size(579, 341);
             this.autoEnrolmentTab.TabIndex = 0;
             this.autoEnrolmentTab.Text = "Automatic Single Course Enrolment";
             // 
@@ -244,13 +244,13 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(567, 314);
+            this.tabPage2.Size = new System.Drawing.Size(579, 341);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Automatic Multiple Course Enrolment";
             // 
             // multiConfirm
             // 
-            this.multiConfirm.Location = new System.Drawing.Point(486, 58);
+            this.multiConfirm.Location = new System.Drawing.Point(491, 58);
             this.multiConfirm.Name = "multiConfirm";
             this.multiConfirm.Size = new System.Drawing.Size(75, 23);
             this.multiConfirm.TabIndex = 2;
@@ -260,7 +260,7 @@
             // 
             // add
             // 
-            this.add.Location = new System.Drawing.Point(487, 15);
+            this.add.Location = new System.Drawing.Point(492, 15);
             this.add.Name = "add";
             this.add.Size = new System.Drawing.Size(75, 23);
             this.add.TabIndex = 0;
@@ -273,7 +273,7 @@
             this.panel1.AutoScroll = true;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(481, 310);
+            this.panel1.Size = new System.Drawing.Size(486, 333);
             this.panel1.TabIndex = 1;
             // 
             // Form1
