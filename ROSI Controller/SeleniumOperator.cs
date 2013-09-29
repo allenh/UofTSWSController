@@ -94,7 +94,7 @@ namespace ROSI_Controller
                         webElement = driver.FindElement(By.XPath(sectionXPath));
                         webElement.Click();
 
-                        webElement = driver.FindElement(By.XPath("//*[contains(@value,'Add Meeting Sections')]"));
+                        webElement = driver.FindElement(By.XPath("//*[contains(@value,'Add Meeting Section')]"));
                         webElement.Click();
                         if (driver.PageSource.Contains("success"))
                             return true;
@@ -114,7 +114,7 @@ namespace ROSI_Controller
                         webElement = driver.FindElement(By.XPath(sectionXPath));
                         webElement.Click();
 
-                        webElement = driver.FindElement(By.XPath("//*[contains(@value,'Add Meeting Sections')]"));
+                        webElement = driver.FindElement(By.XPath("//*[contains(@value,'Add Meeting Section')]"));
                         webElement.Click();
                         if (driver.PageSource.Contains("success"))
                             return true;
