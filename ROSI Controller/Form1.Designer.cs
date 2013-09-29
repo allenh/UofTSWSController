@@ -38,6 +38,7 @@
             this.operation = new System.Windows.Forms.TabPage();
             this.ops = new System.Windows.Forms.TabControl();
             this.autoEnrolmentTab = new System.Windows.Forms.TabPage();
+            this.singleLectureSectionBox = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.singleCourseButton = new System.Windows.Forms.Button();
             this.singleSectionCodeTextbox = new System.Windows.Forms.TextBox();
@@ -45,12 +46,15 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.singleLectureSectionBox = new System.Windows.Forms.TextBox();
+            this.add = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.multiConfirm = new System.Windows.Forms.Button();
             this.general.SuspendLayout();
             this.auth.SuspendLayout();
             this.operation.SuspendLayout();
             this.ops.SuspendLayout();
             this.autoEnrolmentTab.SuspendLayout();
+            this.tabPage2.SuspendLayout();
             this.SuspendLayout();
             // 
             // general
@@ -60,7 +64,7 @@
             this.general.Location = new System.Drawing.Point(3, -3);
             this.general.Name = "general";
             this.general.SelectedIndex = 0;
-            this.general.Size = new System.Drawing.Size(495, 306);
+            this.general.Size = new System.Drawing.Size(586, 375);
             this.general.TabIndex = 21;
             // 
             // auth
@@ -73,7 +77,7 @@
             this.auth.Location = new System.Drawing.Point(4, 22);
             this.auth.Name = "auth";
             this.auth.Padding = new System.Windows.Forms.Padding(3);
-            this.auth.Size = new System.Drawing.Size(487, 280);
+            this.auth.Size = new System.Drawing.Size(578, 349);
             this.auth.TabIndex = 0;
             this.auth.Text = "tabPage1";
             this.auth.UseVisualStyleBackColor = true;
@@ -127,7 +131,7 @@
             this.operation.Location = new System.Drawing.Point(4, 22);
             this.operation.Name = "operation";
             this.operation.Padding = new System.Windows.Forms.Padding(3);
-            this.operation.Size = new System.Drawing.Size(487, 280);
+            this.operation.Size = new System.Drawing.Size(578, 349);
             this.operation.TabIndex = 1;
             this.operation.Text = "tabPage2";
             this.operation.UseVisualStyleBackColor = true;
@@ -136,10 +140,10 @@
             // 
             this.ops.Controls.Add(this.autoEnrolmentTab);
             this.ops.Controls.Add(this.tabPage2);
-            this.ops.Location = new System.Drawing.Point(6, 6);
+            this.ops.Location = new System.Drawing.Point(0, 6);
             this.ops.Name = "ops";
             this.ops.SelectedIndex = 0;
-            this.ops.Size = new System.Drawing.Size(475, 263);
+            this.ops.Size = new System.Drawing.Size(575, 340);
             this.ops.SizeMode = System.Windows.Forms.TabSizeMode.FillToRight;
             this.ops.TabIndex = 0;
             // 
@@ -156,14 +160,21 @@
             this.autoEnrolmentTab.Location = new System.Drawing.Point(4, 22);
             this.autoEnrolmentTab.Name = "autoEnrolmentTab";
             this.autoEnrolmentTab.Padding = new System.Windows.Forms.Padding(3);
-            this.autoEnrolmentTab.Size = new System.Drawing.Size(467, 237);
+            this.autoEnrolmentTab.Size = new System.Drawing.Size(567, 314);
             this.autoEnrolmentTab.TabIndex = 0;
             this.autoEnrolmentTab.Text = "Automatic Single Course Enrolment";
+            // 
+            // singleLectureSectionBox
+            // 
+            this.singleLectureSectionBox.Location = new System.Drawing.Point(276, 136);
+            this.singleLectureSectionBox.Name = "singleLectureSectionBox";
+            this.singleLectureSectionBox.Size = new System.Drawing.Size(100, 20);
+            this.singleLectureSectionBox.TabIndex = 6;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(127, 129);
+            this.label5.Location = new System.Drawing.Point(184, 139);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(85, 13);
             this.label5.TabIndex = 5;
@@ -171,7 +182,7 @@
             // 
             // singleCourseButton
             // 
-            this.singleCourseButton.Location = new System.Drawing.Point(144, 160);
+            this.singleCourseButton.Location = new System.Drawing.Point(201, 168);
             this.singleCourseButton.Name = "singleCourseButton";
             this.singleCourseButton.Size = new System.Drawing.Size(175, 23);
             this.singleCourseButton.TabIndex = 4;
@@ -181,14 +192,14 @@
             // 
             // singleSectionCodeTextbox
             // 
-            this.singleSectionCodeTextbox.Location = new System.Drawing.Point(219, 96);
+            this.singleSectionCodeTextbox.Location = new System.Drawing.Point(276, 103);
             this.singleSectionCodeTextbox.Name = "singleSectionCodeTextbox";
             this.singleSectionCodeTextbox.Size = new System.Drawing.Size(100, 20);
             this.singleSectionCodeTextbox.TabIndex = 3;
             // 
             // singleCourseCodeTextbox
             // 
-            this.singleCourseCodeTextbox.Location = new System.Drawing.Point(219, 59);
+            this.singleCourseCodeTextbox.Location = new System.Drawing.Point(276, 69);
             this.singleCourseCodeTextbox.Name = "singleCourseCodeTextbox";
             this.singleCourseCodeTextbox.Size = new System.Drawing.Size(100, 20);
             this.singleCourseCodeTextbox.TabIndex = 2;
@@ -196,7 +207,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(138, 96);
+            this.label4.Location = new System.Drawing.Point(195, 107);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(74, 13);
             this.label4.TabIndex = 1;
@@ -205,7 +216,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(141, 59);
+            this.label3.Location = new System.Drawing.Point(198, 74);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(71, 13);
             this.label3.TabIndex = 0;
@@ -214,25 +225,49 @@
             // tabPage2
             // 
             this.tabPage2.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.tabPage2.Controls.Add(this.multiConfirm);
+            this.tabPage2.Controls.Add(this.add);
+            this.tabPage2.Controls.Add(this.panel1);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(467, 237);
+            this.tabPage2.Size = new System.Drawing.Size(567, 314);
             this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "tabPage2";
+            this.tabPage2.Text = "Automatic Full Course Enrolment";
             // 
-            // singleLectureSectionBox
+            // add
             // 
-            this.singleLectureSectionBox.Location = new System.Drawing.Point(219, 129);
-            this.singleLectureSectionBox.Name = "singleLectureSectionBox";
-            this.singleLectureSectionBox.Size = new System.Drawing.Size(100, 20);
-            this.singleLectureSectionBox.TabIndex = 6;
+            this.add.Location = new System.Drawing.Point(487, 15);
+            this.add.Name = "add";
+            this.add.Size = new System.Drawing.Size(75, 23);
+            this.add.TabIndex = 0;
+            this.add.Text = "Add Course";
+            this.add.UseVisualStyleBackColor = true;
+            this.add.Click += new System.EventHandler(this.add_Click);
+            // 
+            // panel1
+            // 
+            this.panel1.AutoScroll = true;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(481, 310);
+            this.panel1.TabIndex = 1;
+            // 
+            // multiConfirm
+            // 
+            this.multiConfirm.Location = new System.Drawing.Point(486, 58);
+            this.multiConfirm.Name = "multiConfirm";
+            this.multiConfirm.Size = new System.Drawing.Size(75, 23);
+            this.multiConfirm.TabIndex = 2;
+            this.multiConfirm.Text = "Confirm";
+            this.multiConfirm.UseVisualStyleBackColor = true;
+            this.multiConfirm.Click += new System.EventHandler(this.multiConfirm_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(497, 299);
+            this.ClientSize = new System.Drawing.Size(585, 369);
             this.Controls.Add(this.general);
             this.Name = "Form1";
             this.Text = "Form1";
@@ -243,6 +278,7 @@
             this.ops.ResumeLayout(false);
             this.autoEnrolmentTab.ResumeLayout(false);
             this.autoEnrolmentTab.PerformLayout();
+            this.tabPage2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -267,6 +303,9 @@
         private System.Windows.Forms.Button singleCourseButton;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox singleLectureSectionBox;
+        private System.Windows.Forms.Button add;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button multiConfirm;
 
 
 
