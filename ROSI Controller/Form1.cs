@@ -80,18 +80,35 @@ namespace ROSI_Controller
         {
             if (singleCourseCodeTextbox.Text.Length > 0 && singleSectionCodeTextbox.Text.Length > 0)
             {
-                string courseCode = singleCourseCodeTextbox.Text.ToUpper();
-                string sectionCode = singleSectionCodeTextbox.Text.ToUpper();
-                string lectureSection = singleLectureSectionBox.Text;
-                Course c = new Course(courseCode, sectionCode, lectureSection);
-                bool success = op.addSingleCourse(c, driver);
-                if (success)
-                    MessageBox.Show((c.getFullCourseCode() + " has been successfully added!"));
-                else
-                    MessageBox.Show("An error occrued while adding the course");
-            }
-        }
+                bool success = false;
+                if (checkBox1.Checked)
+                {
+                    string courseCode = singleCourseCodeTextbox.Text.ToUpper();
+                    string sectionCode = singleSectionCodeTextbox.Text.ToUpper();
+                    string lectureSection = singleLectureSectionBox.Text;
+                    Course c = new Course(courseCode, sectionCode, lectureSection);
+                    while (!success)
+                        success = op.addSingleCourse(c, driver);
 
+                    if (success)
+                        MessageBox.Show((c.getFullCourseCode() + " has been successfully added!"));
+                }
+                else
+                {
+                    string courseCode = singleCourseCodeTextbox.Text.ToUpper();
+                    string sectionCode = singleSectionCodeTextbox.Text.ToUpper();
+                    string lectureSection = singleLectureSectionBox.Text;
+                    Course c = new Course(courseCode, sectionCode, lectureSection);
+                    success = op.addSingleCourse(c, driver);
+                    if (success)
+                        MessageBox.Show((c.getFullCourseCode() + " has been successfully added!"));
+                    else
+                        MessageBox.Show("An error occrued while adding the course");
+                }
+            }
+            else
+                MessageBox.Show("Please complete the course information form");
+        }
 
         /// <summary>
         /// Dynamically add course information
@@ -188,6 +205,14 @@ namespace ROSI_Controller
                     errormsg += (noneSuccess[i] + "\r\n");
                 }
                 MessageBox.Show(errormsg);
+            }
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox1.Checked)
+            {
+                MessageBox.Show("You should only use this function when the waitlist is dropped \r\n and make sure your schedule is not at maximum course load.");
             }
         }
 

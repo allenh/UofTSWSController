@@ -38,6 +38,7 @@
             this.operation = new System.Windows.Forms.TabPage();
             this.ops = new System.Windows.Forms.TabControl();
             this.autoEnrolmentTab = new System.Windows.Forms.TabPage();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.singleLectureSectionBox = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.singleCourseButton = new System.Windows.Forms.Button();
@@ -46,9 +47,9 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.multiConfirm = new System.Windows.Forms.Button();
             this.add = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.multiConfirm = new System.Windows.Forms.Button();
             this.general.SuspendLayout();
             this.auth.SuspendLayout();
             this.operation.SuspendLayout();
@@ -150,6 +151,7 @@
             // autoEnrolmentTab
             // 
             this.autoEnrolmentTab.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.autoEnrolmentTab.Controls.Add(this.checkBox1);
             this.autoEnrolmentTab.Controls.Add(this.singleLectureSectionBox);
             this.autoEnrolmentTab.Controls.Add(this.label5);
             this.autoEnrolmentTab.Controls.Add(this.singleCourseButton);
@@ -163,6 +165,17 @@
             this.autoEnrolmentTab.Size = new System.Drawing.Size(567, 314);
             this.autoEnrolmentTab.TabIndex = 0;
             this.autoEnrolmentTab.Text = "Automatic Single Course Enrolment";
+            // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(201, 173);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(164, 17);
+            this.checkBox1.TabIndex = 7;
+            this.checkBox1.Text = "Continuous check for spaces";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
             // singleLectureSectionBox
             // 
@@ -182,9 +195,9 @@
             // 
             // singleCourseButton
             // 
-            this.singleCourseButton.Location = new System.Drawing.Point(201, 168);
+            this.singleCourseButton.Location = new System.Drawing.Point(228, 205);
             this.singleCourseButton.Name = "singleCourseButton";
-            this.singleCourseButton.Size = new System.Drawing.Size(175, 23);
+            this.singleCourseButton.Size = new System.Drawing.Size(113, 23);
             this.singleCourseButton.TabIndex = 4;
             this.singleCourseButton.Text = "Confirm";
             this.singleCourseButton.UseVisualStyleBackColor = true;
@@ -233,7 +246,17 @@
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage2.Size = new System.Drawing.Size(567, 314);
             this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Automatic Full Course Enrolment";
+            this.tabPage2.Text = "Automatic Multiple Course Enrolment";
+            // 
+            // multiConfirm
+            // 
+            this.multiConfirm.Location = new System.Drawing.Point(486, 58);
+            this.multiConfirm.Name = "multiConfirm";
+            this.multiConfirm.Size = new System.Drawing.Size(75, 23);
+            this.multiConfirm.TabIndex = 2;
+            this.multiConfirm.Text = "Confirm";
+            this.multiConfirm.UseVisualStyleBackColor = true;
+            this.multiConfirm.Click += new System.EventHandler(this.multiConfirm_Click);
             // 
             // add
             // 
@@ -252,16 +275,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(481, 310);
             this.panel1.TabIndex = 1;
-            // 
-            // multiConfirm
-            // 
-            this.multiConfirm.Location = new System.Drawing.Point(486, 58);
-            this.multiConfirm.Name = "multiConfirm";
-            this.multiConfirm.Size = new System.Drawing.Size(75, 23);
-            this.multiConfirm.TabIndex = 2;
-            this.multiConfirm.Text = "Confirm";
-            this.multiConfirm.UseVisualStyleBackColor = true;
-            this.multiConfirm.Click += new System.EventHandler(this.multiConfirm_Click);
             // 
             // Form1
             // 
@@ -306,6 +319,7 @@
         private System.Windows.Forms.Button add;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button multiConfirm;
+        private System.Windows.Forms.CheckBox checkBox1;
 
 
 
